@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/anaGiris">
+
+    <fragment
+        android:id="@+id/anaGiris"
+        android:name="com.farukaydin.kursapp.view.anaGirisFragment"
+        android:label="fragment_ana_giris"
+        tools:layout="@layout/fragment_ana_giris" >
+        <action
+            android:id="@+id/action_anaGiris_to_ogrenciBilgi"
+            app:destination="@id/ogrenciBilgi" />
+    </fragment>
+    <fragment
+        android:id="@+id/ogrenciBilgi"
+        android:name="com.farukaydin.kursapp.view.ogrenciBilgi"
+        android:label="fragment_ogrenci_bilgi"
+        tools:layout="@layout/fragment_ogrenci_bilgi" >
+        <argument
+            android:name="bilgi"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_ogrenciBilgi_to_anaGiris"
+            app:destination="@id/anaGiris" />
+    </fragment>
+</navigation>
